@@ -1,5 +1,7 @@
 # Bovine-Enformer
 
+> https://github.com/WangyuLab/bovine-enformer
+
 **Bovine cell-context accessibility & variant perturbation prediction from DNA sequence**
 
 牛细胞类型上下文染色质可及性与变异扰动预测工具 —— 人源 Enformer 经 BovineSCellRegAtlas 单细胞图谱监督的领域适配模型。
@@ -35,8 +37,9 @@ pip install enformer-pytorch==0.8.12 transformers==4.56.2 numpy pandas pyfaidx
 # model weights
 # 1) Enformer trunk (EleutherAI PyTorch port)
 huggingface-cli download EleutherAI/enformer-official-rough --local-dir models/enformer-official-rough
-# 2) Bovine head v1.0 (this repo, see Releases / models link below)
-#    models/bovine_enformer/head_v10.pt   (v1.0: test AUROC 0.9117, background-calibrated)
+# 2) Bovine head v1.0 (GitHub Release asset)
+curl -L -o head_v10.pt https://github.com/WangyuLab/bovine-enformer/releases/download/v1.0.0/head_v10.pt
+#    -> models/bovine_enformer/head_v10.pt  (test AUROC 0.9117, background-calibrated)
 ```
 
 > ⚠️ transformers ≥5.0 breaks enformer-pytorch — pin 4.56.2. numpy ≥2.0 breaks scipy in older stacks — pin numpy 1.x if needed.
