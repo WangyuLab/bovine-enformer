@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+*.pt
+*.npy
+*.bw
+*.fa
+*.fai
+.DS_Store
+软著*
+*.docx

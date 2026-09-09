@@ -1,0 +1,4 @@
+# chr pos ref alt   (1-based, ARS-UCD1.2)
+1	882163	G	C
+1	1724238	C	T
+2	5000000	A	G

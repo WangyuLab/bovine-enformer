@@ -1,0 +1,16 @@
+# Core
+torch>=2.0
+numpy<2.0
+pandas
+pyBigWig
+pysam
+
+# Enformer backbone
+enformer-pytorch==0.8.12
+transformers>=4.44,<5.0
+safetensors
+einops
+
+# Optional (training / evaluation)
+scikit-learn
+scipy
