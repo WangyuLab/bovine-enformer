@@ -48,6 +48,9 @@ curl -L -o head_v10.pt https://github.com/WangyuLab/bovine-enformer/releases/dow
 
 ```bash
 # 1) any DNA sequences (FASTA) -> 59-context accessibility probabilities
+#    NOTE: input sequences should be close to the 196,608 bp model window;
+#    short isolated sequences lack long-range context and degrade to background.
+#    For short regions use `region` instead (it extracts the flanks for you).
 python -m bovine_enformer.cli seq --fa seqs.fa --out preds.tsv
 
 # 2) genomic regions (BED, ARS-UCD1.2) -> accessibility profiles

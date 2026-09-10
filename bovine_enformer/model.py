@@ -46,7 +46,8 @@ class BovineEnformer:
                 if len(s) > SEQ_LEN:
                     c = len(s) // 2
                     s = s[c - HALF:c + HALF]
-                s = s + "N" * (SEQ_LEN - len(s))
+                pad = SEQ_LEN - len(s)
+                s = "N" * (pad // 2) + s + "N" * (pad - pad // 2)
                 batch.append(one_hot(s))
             xb = torch.from_numpy(np.stack(batch)).permute(0, 2, 1).contiguous().to(self.device)
             if self.device == "cuda":
